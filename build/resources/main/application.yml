@@ -1,0 +1,18 @@
+server:
+  port: 8888
+spring:
+  profiles:
+    active: dev
+  kafka:
+    consumer:
+      group-id: kafka-demo
+      auto-offset-reset: earliest
+    bootstrap-servers: localhost:9092
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/vkunapuli/config-repo.git
+tpd:
+  topic-name: kafka-topic-test
+  messages-per-request: 10
